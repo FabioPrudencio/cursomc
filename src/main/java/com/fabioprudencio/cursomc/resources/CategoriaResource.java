@@ -1,5 +1,7 @@
 package com.fabioprudencio.cursomc.resources;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,5 +24,11 @@ public class CategoriaResource {
 		Categoria obj = service.find(id);
 		return ResponseEntity.ok().body(obj);
 	}
+	
+	@RequestMapping(method=RequestMethod.GET)
+	public ResponseEntity<?> find () {
+		List<Categoria> categorias = service.listAll();		
+		return ResponseEntity.ok().body(categorias);
+	}	
 	
 }

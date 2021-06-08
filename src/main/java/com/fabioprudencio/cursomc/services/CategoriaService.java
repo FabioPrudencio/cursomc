@@ -1,5 +1,6 @@
 package com.fabioprudencio.cursomc.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,4 +19,11 @@ public class CategoriaService {
 		Optional<Categoria> obj = repo.findById(id);
 		return obj.orElse(null);
 	}
+	
+	public List<Categoria> listAll(){
+		List<Categoria> lista = repo.findAll();
+		return lista;
+		
+	}
+	
 }
