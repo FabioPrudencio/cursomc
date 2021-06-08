@@ -29,6 +29,6 @@ public class CategoriaResource {
 	public ResponseEntity<?> find () {
 		List<Categoria> categorias = service.listAll();		
 		return ResponseEntity.ok().body(categorias);
-	}	
+	}
 	
 }
